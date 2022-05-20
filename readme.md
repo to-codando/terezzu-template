@@ -4,34 +4,43 @@ Se você espera encontrar aqui mais do mesmo, definitivamente essa biblioteca n�
 
 * Acesse a documentação em [lemejs.io](https://to-codando.github.io/leme-js-doc/#/)
 
-### Iniciando uma aplicação
+### Criando uma aplicação
 
 Utilize o npx combinado ao degit para criar um novo projeto 
 
 ```
-  npx degit github:to-codando/leme-js-template
+  npx degit github:to-codando/leme-js-template my-app
 ```
 
 # Execute a aplicação modelo
 
-PNPM é o novo padrão de gerenciador de pacotes adotado para lemejs@next
+PNPM é o novo padrão de gerenciador de pacotes adotado para lemejs@next e para iniciar a aplicação
+você vai precisar instalar o *pnpm* primeiro.
+
+Para instalar o *pnpm* basta executar o código abaixo:
 
 ```
-pnpm serve
+npm install -g pnpm
 ```
 
-Você também pode usar npm e yarn.
+E para executar a aplicação o código abaixo:
+
+```
+pnpm start
+```
+
+Você também pode usar npm e yarn. Mas, precisará substituir o termo *pnpm* em todos os locais no arquivo package.json.
 
 Com npm
 
 ```
-npm serve
+npm start
 ```
 
 Com yarn
 
 ```
-yarn serve
+yarn start
 ```
 
 ### Acessando a aplicação no browser
