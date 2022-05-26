@@ -1,5 +1,5 @@
 {
-	"name": "task-manager",
+	"name": "AppHello",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./src/main.js",
@@ -11,6 +11,12 @@
 				],
 				"on": "change",
 				"run": [
+					{
+						"cmd": "pnpm",
+						"args": [
+							"lint"
+						]
+					},
 					{
 						"cmd": "pnpm",
 						"args": [
@@ -27,7 +33,17 @@
 			}
 		]
 	},
+	"standard": {
+		"ignore":[
+			"/node_modules",
+			"/dist",
+			"/android",
+			".idea",
+			"esbuild.config.js"
+		]
+	},
 	"scripts": {
+		"lint":"pnpm standard --fix",
 		"copy": "shx cp ./index.html ./dist/index.html",
 		"watch": "pnpm precise-watcher",
 		"dev": "cross-env NODE_ENV=development node ./esbuild.config.js",
@@ -44,9 +60,10 @@
 		"esbuild": "^0.14.39",
 		"http-server": "^14.1.0",
 		"precise-watcher": "^2.1.0",
-		"shx": "^0.3.4"
+		"shx": "^0.3.4",
+		"standard": "^17.0.0"
 	},
 	"dependencies": {
-		"lemejs": "^6.0.6"
+		"lemejs": "^6.0.7"
 	}
 }
