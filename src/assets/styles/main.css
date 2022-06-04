@@ -1,6 +1,7 @@
+
+@import url('./var.css');
 @import url('./reset.css');
 @import url('./global.css');
-@import url('./grid.css');
 
 
 body {

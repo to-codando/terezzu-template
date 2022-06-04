@@ -1,6 +1,6 @@
 import bannerLemeJs from '../../assets/images/leme-js-banner.png'
 export default ({ state, html }) => {
-    return html`
+  return html`
     <div class="hello-wrapper">
         <h1 class="title" style="margin-bottom:30px;">${state.title}</h1>
         <p>

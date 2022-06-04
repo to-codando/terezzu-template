@@ -1,3 +1,3 @@
-export default (root, props) =>   /*css*/`
-    ${root} { display:inline }  
+export default ({ ctx, css }) => css`
+    ${ctx} { display:inline }  
 `

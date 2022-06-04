@@ -1,4 +1,4 @@
-export default ({ state }) => /*html*/ `
+export default ({ state }) => html`
     <div class="ctx-content">
         <label>
             <span>Tarefa teste</span>

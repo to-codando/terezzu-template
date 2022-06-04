@@ -1,6 +1,6 @@
-export default (root, props) =>   /*css*/`
-        ${root},
-        ${root} .text-wrapper {
+export default ({ ctx, css }) => css`
+        ${ctx},
+        ${ctx} .text-wrapper {
             display:flex;
             align-items:center;
             justify-content:center;

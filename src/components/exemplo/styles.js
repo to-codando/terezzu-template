@@ -1,6 +1,6 @@
-export default (root) => /*css*/`
+export default (root) => css`
 
-${root},
+${ctx},
 .ctx-content {
     display:flex;
     align-items:flex-end;

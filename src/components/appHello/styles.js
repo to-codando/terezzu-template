@@ -1,14 +1,14 @@
-export default (root, props) =>   /*css*/`
-        ${root} .hello-wrapper { text-align:center }
-        ${root} .title { color: blue }
-        ${root} .banner {
+export default ({ ctx, css }) => css`
+        ${ctx} .hello-wrapper { text-align:center }
+        ${ctx} .title { color: blue }
+        ${ctx} .banner {
             display:flex;
             border-radius:5px;
             width:100%;
             max-width:600px;
             margin:15px;
         }
-        ${root} a {
+        ${ctx} a {
             display:flex;
             flex-wrap:wrap;
             justify-content:center;

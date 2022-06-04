@@ -1,3 +1,3 @@
-export default ({ state, props }) => /*html*/ `
+export default ({ state, html }) => html`
     <router-view></router-view>
 `

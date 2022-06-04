@@ -1,7 +1,7 @@
-import { routerFactory } from "lemejs"
+import { routerFactory } from 'lemejs'
 
-import { appNotFound } from "../components/appNotFound"
-import { appHello } from "../components/appHello"
+import { appNotFound } from '../components/appNotFound'
+import { appHello } from '../components/appHello'
 
 const router = routerFactory()
 
