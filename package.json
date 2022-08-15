@@ -64,6 +64,6 @@
 		"standard": "^17.0.0"
 	},
 	"dependencies": {
-		"lemejs": "^6.0.7"
+		"lemejs": "^6.1.6"
 	}
 }
