@@ -1,10 +1,10 @@
 {
-	"name": "AppHello",
+	"name": "app-hello",
 	"version": "1.0.0",
 	"description": "",
 	"main": "./src/main.js",
 	"precise-watcher": {
-	"src": [
+		"src": [
 			{
 				"pattern": [
 					"./src/**/*"
@@ -34,7 +34,7 @@
 		]
 	},
 	"standard": {
-		"ignore":[
+		"ignore": [
 			"/node_modules",
 			"/dist",
 			"/android",
@@ -43,7 +43,7 @@
 		]
 	},
 	"scripts": {
-		"lint":"pnpm standard --fix",
+		"lint": "pnpm standard --fix",
 		"copy": "shx cp ./index.html ./dist/index.html",
 		"watch": "pnpm precise-watcher",
 		"dev": "cross-env NODE_ENV=development node ./esbuild.config.js",
@@ -58,6 +58,7 @@
 	"devDependencies": {
 		"cross-env": "^7.0.3",
 		"esbuild": "^0.14.39",
+		"esbuild-plugin-path-alias": "^1.0.6",
 		"http-server": "^14.1.0",
 		"precise-watcher": "^2.1.0",
 		"shx": "^0.3.4",
