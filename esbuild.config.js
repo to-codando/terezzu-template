@@ -1,58 +1,41 @@
 const esbuild = require("esbuild")
+const aliasPlugin = require("esbuild-plugin-path-alias")
+const path = require("path")
 
-const ENV = process.env.NODE_ENV
+const isDevMode = () => process.env.NODE_ENV === 'development';
 
-if (ENV === "development") {
-	esbuild
-		.build({
-			entryPoints: ["src/main.js", "src/assets/styles/main.css"],
-			outdir: "dist",
-			bundle: true,
-			treeShaking: true,
-			keepNames: true,
-			sourcemap: true,
-			minify: false,
-			splitting: true,
-			format: "esm",
-			target: ["esnext"],
-			loader: {
-				".png": "dataurl",
-				".jpg": "file",
-				".jpeg": "file",
-				".svg": "text",
-			},
-		})
-		.then(() => {
-			return `
-        ${console.log("==========================================")}
-        ${console.log("========Environment: development==========")}
-        ${console.log("==========================================")}
-      `
-		})
-		.catch(() => process.exit(1))
-} else if (ENV === "production") {
-	esbuild
-		.build({
-			entryPoints: ["src/main.js", "src/assets/styles/main.css"],
-			outdir: "dist",
-			bundle: true,
-			treeShaking: true,
-			keepNames: true,
-			minify: true,
-			splitting: true,
-			format: "esm",
-			target: ["chrome51", "firefox58", "edge18", "safari11"],
-			loader: {
-				".png": "dataurl",
-				".svg": "text",
-			},
-		})
-		.then(() => {
-			return `
-        console.log("=============================================");
-        console.log("==========Environment: production============");
-        console.log("=============================================");
-      `
-		})
-		.catch(() => process.exit(1))
+const showMessage = () => {
+	const envMessage = isDevMode() ? 'Develop Mode' : 'Production Mode'
+	console.log("==========================================")
+	console.log(`=         Running: ${envMessage}          =`)
+	console.log("==========================================")
 }
+
+const config = {
+  entryPoints: ["src/main.js", "src/assets/styles/main.css"],
+  outdir: "dist",
+  bundle: true,
+  splitting: true,
+  treeShaking: isDevMode() ? false : true,
+  keepNames: true,
+  sourcemap: isDevMode() ? true : false,
+  minify: isDevMode() ? false : true,
+  format: "esm",
+  target: isDevMode() ? ["esnext"] : ["es2018"],
+  loader: {
+    ".png": "dataurl",
+    ".jpg": "file",
+    ".jpeg": "file",
+    ".svg": "text",
+  },
+  plugins: [
+    aliasPlugin({
+      "@/components": path.resolve(__dirname, "./src/components"),
+    }),
+  ],
+}
+
+esbuild
+	.build(config)
+	.then(showMessage)
+	.catch(() => process.exit(1))
