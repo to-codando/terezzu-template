@@ -8,7 +8,7 @@ import styles from './styles'
 const appHello = () => {
   const state = observerFactory({
     title: 'Hello World!',
-    text: 'Now it\'s with lemeJs!!!'
+    text: 'Now it`s with lemeJs!!!'
   })
 
   const children = () => ({ appText })
