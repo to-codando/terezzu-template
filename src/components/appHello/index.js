@@ -1,7 +1,5 @@
 import { observerFactory } from 'lemejs'
 
-import { appText } from '../appText'
-
 import template from './template'
 import styles from './styles'
 
@@ -11,13 +9,10 @@ const appHello = () => {
     text: 'Now it`s with lemeJs!!!'
   })
 
-  const children = () => ({ appText })
-
   return {
     state,
     template,
-    styles,
-    children
+    styles
   }
 }
 

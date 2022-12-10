@@ -7,7 +7,7 @@ export default ({ state, html }) => {
       <p>
         <img src="${bannerLemeJs}" alt="Leme Js" class="banner" />
       </p>
-      <app-text></app-text>
+      <p>Fast and lightweight reactive pattern library.</p>
       <a href="#/xxx">Go to other page!!!</a>
     </div>
   `

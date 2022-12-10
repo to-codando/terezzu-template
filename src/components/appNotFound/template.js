@@ -1,4 +1,4 @@
-export default ({ state, html }) => html`
+export default ({ html }) => html`
   <h1>
     <strong>404</strong>
     Página não encontrada...

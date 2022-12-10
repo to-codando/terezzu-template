@@ -1,6 +1,7 @@
 {
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "parserOptions": {
     "ecmaVersion": 2021,
@@ -10,9 +11,10 @@
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
     "comma-dangle": ["error", "never"],
-    "no-implicit-globals": "off"
+    "no-implicit-globals": "off",
+    "no-new-require":"off"
   },
   "plugins": ["fetch"],
-  "extends": [
-    "plugin:fetch/recommended"]
+  "extends": ["eslint:recommended", "plugin:fetch/recommended"],
+  "ignorePatterns": ["esbuild.config.js"]
 }
