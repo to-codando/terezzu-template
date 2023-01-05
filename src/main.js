@@ -1,13 +1,13 @@
-import { createApp } from 'lemejs'
-import { router } from './routes'
+import { render } from 'terezzu'
+
 import { appMain } from './components/appMain'
+import { appHello } from './components/appHello'
 
-const selector = '#app'
-
-const app = createApp(
-  selector,
+render(
   appMain,
-  router
+  'main',
+  (appMainElement) => {
+    render(appHello, 'hello', null, appMainElement)
+  },
+  document.body
 )
-
-app.init()

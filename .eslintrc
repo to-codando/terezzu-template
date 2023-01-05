@@ -12,7 +12,8 @@
     "quotes": ["error", "single"],
     "comma-dangle": ["error", "never"],
     "no-implicit-globals": "off",
-    "no-new-require":"off"
+    "no-new-require":"off",
+    "max-len":1
   },
   "plugins": ["fetch"],
   "extends": ["eslint:recommended", "plugin:fetch/recommended"],

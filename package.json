@@ -34,7 +34,7 @@
   "devDependencies": {
     "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
-    "esbuild": "0.16.3",
+    "esbuild": "^0.15.5",
     "esbuild-copy-files-plugin": "^1.1.0",
     "esbuild-plugin-eslint": "^0.1.1",
     "esbuild-plugin-path-alias": "^1.0.7",
@@ -51,6 +51,7 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "lemejs": "^6.1.11"
+    "htm": "^3.1.1",
+    "terezzu": "^0.0.7"
   }
 }

@@ -1,19 +1,10 @@
-import { observerFactory } from 'lemejs'
+import model from './model'
+import view from './view'
+import controller from './controller'
 
-import template from './template'
-import styles from './styles'
-
-const appHello = () => {
-  const state = observerFactory({
-    title: 'Hello World!',
-    text: 'Now it`s with lemeJs!!!'
-  })
-
-  return {
-    state,
-    template,
-    styles
-  }
-}
-
-export { appHello }
+export const appHello = (state) => ({
+  state,
+  model,
+  view,
+  controller
+})

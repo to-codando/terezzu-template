@@ -1,6 +1,10 @@
-import template from './template'
-import styles from './styles'
+import model from './model'
+import view from './view'
+import controller from './controller'
 
-export const appMain = () => {
-  return { template, styles }
-}
+export const appMain = (state) => ({
+  state,
+  model,
+  view,
+  controller
+})
